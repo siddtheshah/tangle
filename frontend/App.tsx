@@ -10,13 +10,23 @@
 
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {SafeAreaView, StyleSheet, Text} from 'react-native';
+import {SafeAreaView, StyleSheet, Text, Button} from 'react-native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+
+const Stack = createNativeStackNavigator();
 
 const App = () => {
   return (
     <SafeAreaView style={styles.background}>
+      <Text>hellooooooooooooooo</Text>
       <NavigationContainer>
-        <Text>hellooooooooooooooo</Text>
+        {/* <Stack.Navigator>
+          <Stack.Screen
+            name="Home"
+            component={HomeScreen}
+            options={{title: 'Welcome'}}
+          />
+        </Stack.Navigator> */}
       </NavigationContainer>
     </SafeAreaView>
   );
