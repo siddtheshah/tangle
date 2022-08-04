@@ -10,12 +10,24 @@
 
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import { Text } from 'react-native';
+import {SafeAreaView, StyleSheet, Text} from 'react-native';
 
 const App = () => {
-  return <NavigationContainer>
-    <Text>hello</Text>
-  </NavigationContainer>;
+  return (
+    <SafeAreaView style={styles.background}>
+      <NavigationContainer>
+        <Text>hellooooooooooooooo</Text>
+      </NavigationContainer>
+    </SafeAreaView>
+  );
 };
 
 export default App;
+
+const styles = StyleSheet.create({
+  background: {
+    flex: 1,
+    backgroundColor: 'blue',
+    fontSize: '30px',
+  },
+});
