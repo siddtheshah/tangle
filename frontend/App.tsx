@@ -50,10 +50,22 @@ function HomeScreen({navigation}) {
   );
 }
 
-function DetailsScreen({navigation, route}) {
+function DetailsScreen({navigation}) {
   return (
     <View style={styles.navigator}>
       <Text>Details Screen</Text>
+      <Button title="Go to Home" onPress={() => navigation.navigate('Home')} />
+    </View>
+  );
+}
+
+const BottomNav = ({navigation}) => {
+  return (
+    <View style={styles.bottom}>
+      <Button
+        title="Go to Details"
+        onPress={() => navigation.navigate('Details')}
+      />
       <Button title="Go to Home" onPress={() => navigation.navigate('Home')} />
     </View>
   );
@@ -67,7 +79,14 @@ const styles = StyleSheet.create({
   },
   navigator: {
     flex: 1,
-    alignItems: 'center',
+    textAlign: 'center',
     justifyContent: 'center',
+  },
+  bottom: {
+    flex: 1,
+    display: 'flex',
+    textAlign: 'center',
+    alignItems: 'flex-end',
+    justifyContent: 'space-around',
   },
 });
