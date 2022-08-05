@@ -9,11 +9,12 @@
  */
 
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { SafeAreaView, StyleSheet, Text, Button, View } from 'react-native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import {NavigationContainer} from '@react-navigation/native';
+import {SafeAreaView, StyleSheet, Text, Button, View} from 'react-native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HomeScreen from './home';
 import ProfileScreen from './profile';
+import BottomNav from './bottom';
 
 const Stack = createNativeStackNavigator();
 
@@ -25,17 +26,17 @@ const App = () => {
           <Stack.Screen
             name="Bottom"
             component={BottomNav}
-            options={{ title: 'Bottom' }}
+            options={{title: 'Bottom'}}
           />
           <Stack.Screen
             name="Home"
             component={HomeScreen}
-            options={{ title: 'Welcome' }}
+            options={{title: 'Welcome'}}
           />
           <Stack.Screen
             name="Details"
             component={ProfileScreen}
-            options={{ title: 'Details' }}
+            options={{title: 'Details'}}
           />
         </Stack.Navigator>
       </NavigationContainer>
@@ -45,29 +46,10 @@ const App = () => {
 
 export default App;
 
-function BottomNav({ navigation }) {
-  return (
-    <View style={styles.bottom}>
-      <Button
-        title="Go to Detail"
-        onPress={() => navigation.navigate('Details')}
-      />
-      <Button title="Go to Home" onPress={() => navigation.navigate('Home')} />
-    </View>
-  );
-}
-
 const styles = StyleSheet.create({
   background: {
     flex: 1,
     backgroundColor: 'white',
     fontSize: '30px',
-  },
-  bottom: {
-    flex: 1,
-    display: 'flex',
-    textAlign: 'center',
-    alignItems: 'flex-end',
-    justifyContent: 'space-around',
   },
 });
