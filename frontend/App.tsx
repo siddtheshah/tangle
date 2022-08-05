@@ -26,17 +26,17 @@ const App = () => {
           <Stack.Screen
             name="Bottom"
             component={BottomNav}
-            options={{title: 'Bottom'}}
+            options={{ title: 'Bottom', headerBackVisible: false, gestureEnabled: false}}
           />
           <Stack.Screen
             name="Home"
             component={HomeScreen}
-            options={{title: 'Welcome'}}
+            options={{ title: 'Welcome', headerBackVisible: false, gestureEnabled: false}}
           />
           <Stack.Screen
             name="Details"
             component={ProfileScreen}
-            options={{title: 'Details'}}
+            options={{ title: 'Details', headerBackVisible: false, gestureEnabled: false}}
           />
         </Stack.Navigator>
       </NavigationContainer>
