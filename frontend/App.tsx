@@ -9,9 +9,11 @@
  */
 
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {SafeAreaView, StyleSheet, Text, Button, View} from 'react-native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import { NavigationContainer } from '@react-navigation/native';
+import { SafeAreaView, StyleSheet, Text, Button, View } from 'react-native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import HomeScreen from './home';
+import ProfileScreen from './profile';
 
 const Stack = createNativeStackNavigator();
 
@@ -19,16 +21,21 @@ const App = () => {
   return (
     <SafeAreaView style={styles.background}>
       <NavigationContainer>
-        <Stack.Navigator>
+        <Stack.Navigator initialRouteName="Bottom">
+          <Stack.Screen
+            name="Bottom"
+            component={BottomNav}
+            options={{ title: 'Bottom' }}
+          />
           <Stack.Screen
             name="Home"
             component={HomeScreen}
-            options={{title: 'Welcome'}}
+            options={{ title: 'Welcome' }}
           />
           <Stack.Screen
             name="Details"
-            component={DetailsScreen}
-            options={{title: 'Details'}}
+            component={ProfileScreen}
+            options={{ title: 'Details' }}
           />
         </Stack.Navigator>
       </NavigationContainer>
@@ -38,32 +45,11 @@ const App = () => {
 
 export default App;
 
-function HomeScreen({navigation}) {
-  return (
-    <View style={styles.navigator}>
-      <Text>Home Screen</Text>
-      <Button
-        title="Go to Details"
-        onPress={() => navigation.navigate('Details')}
-      />
-    </View>
-  );
-}
-
-function DetailsScreen({navigation}) {
-  return (
-    <View style={styles.navigator}>
-      <Text>Details Screen</Text>
-      <Button title="Go to Home" onPress={() => navigation.navigate('Home')} />
-    </View>
-  );
-}
-
-const BottomNav = ({navigation}) => {
+function BottomNav({ navigation }) {
   return (
     <View style={styles.bottom}>
       <Button
-        title="Go to Details"
+        title="Go to Detail"
         onPress={() => navigation.navigate('Details')}
       />
       <Button title="Go to Home" onPress={() => navigation.navigate('Home')} />
@@ -76,11 +62,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'white',
     fontSize: '30px',
-  },
-  navigator: {
-    flex: 1,
-    textAlign: 'center',
-    justifyContent: 'center',
   },
   bottom: {
     flex: 1,
