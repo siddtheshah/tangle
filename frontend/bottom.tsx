@@ -1,3 +1,4 @@
+import { CurrentRenderContext } from '@react-navigation/native';
 import React from 'react';
 import {Text, Button, View} from 'react-native';
 import {StyleSheet} from 'react-native';

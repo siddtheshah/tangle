@@ -14,7 +14,6 @@ import {SafeAreaView, StyleSheet, Text, Button, View} from 'react-native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HomeScreen from './home';
 import ProfileScreen from './profile';
-import BottomNav from './bottom';
 
 const Stack = createNativeStackNavigator();
 
@@ -22,21 +21,24 @@ const App = () => {
   return (
     <SafeAreaView style={styles.background}>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Bottom">
-          <Stack.Screen
-            name="Bottom"
-            component={BottomNav}
-            options={{ title: 'Bottom', headerBackVisible: false, gestureEnabled: false}}
-          />
+        <Stack.Navigator initialRouteName="Home">
           <Stack.Screen
             name="Home"
             component={HomeScreen}
-            options={{ title: 'Welcome', headerBackVisible: false, gestureEnabled: false}}
+            options={{
+              title: 'Welcome',
+              headerBackVisible: false,
+              gestureEnabled: false,
+            }}
           />
           <Stack.Screen
             name="Details"
             component={ProfileScreen}
-            options={{ title: 'Details', headerBackVisible: false, gestureEnabled: false}}
+            options={{
+              title: 'Details',
+              headerBackVisible: false,
+              gestureEnabled: false,
+            }}
           />
         </Stack.Navigator>
       </NavigationContainer>
