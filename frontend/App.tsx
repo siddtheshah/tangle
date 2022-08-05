@@ -26,16 +26,16 @@ const App = () => {
             name="Home"
             component={HomeScreen}
             options={{
-              title: 'Welcome',
+              title: 'Home',
               headerBackVisible: false,
               gestureEnabled: false,
             }}
           />
           <Stack.Screen
-            name="Details"
+            name="Profile"
             component={ProfileScreen}
             options={{
-              title: 'Details',
+              title: 'Profile',
               headerBackVisible: false,
               gestureEnabled: false,
             }}
@@ -51,7 +51,7 @@ export default App;
 const styles = StyleSheet.create({
   background: {
     flex: 1,
-    backgroundColor: 'white',
-    fontSize: '30px',
+    backgroundColor: 'lightblue',
+    fontSize: '50px',
   },
 });

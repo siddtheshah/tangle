@@ -7,11 +7,7 @@ export default function ProfileScreen({navigation}) {
   return (
     <>
       <View style={styles.navigator}>
-        <Text>Details Screen</Text>
-        <Button
-          title="Go to Home"
-          onPress={() => navigation.navigate('Home')}
-        />
+        <Text>Profile Screen</Text>
       </View>
       <BottomNav navigation={navigation} />
     </>

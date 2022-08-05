@@ -8,10 +8,6 @@ export default function HomeScreen({navigation}) {
     <>
       <View style={styles.navigator}>
         <Text>Home Screen</Text>
-        <Button
-          title="Go to Details"
-          onPress={() => navigation.navigate('Details')}
-        />
       </View>
       <BottomNav navigation={navigation} />
     </>
