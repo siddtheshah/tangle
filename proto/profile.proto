@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option go_package = "./";
+
+message Profile {
+    // A pair of IDs generated via a UUID function. We should ensure a mechanism to avoid purposeful collisions.
+    uint64 primary_id = 1;
+    // These IDs can be concatenated to get a combined ID, which should have sufficient sparsity to avoid random collisions.
+    uint64 secondary_id = 5;
+
+    // Subject's name.
+    string name = 2;
+    // Subject's bio.
+    string bio = 3;
+    // Profile image CID on IPFS.
+    string image_cid = 4;
+
+    enum Gender {
+        UNKNOWN = 0; // Should not exist
+        FEMALE = 1;
+        MALE = 2;
+        // Tangle doesn't support non-bipartite (and thus non-CIS) matching, currently. 
+    }
+    // Subject's gender.
+    Gender gender = 6;
+    // Subject's occupation.
+    string occupation = 7;
+    // Subject's general place of residence.
+    string residence = 8;
+}
